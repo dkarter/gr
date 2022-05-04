@@ -17,7 +17,6 @@ struct Cli {
 
 fn main() {
     let args = Cli::parse();
-    let file = File::open(&args.path).expect("can't open file");
     each_line(args.path, |line: &str| {
         if line.contains(&args.pattern) {
             println!("{}", line);
